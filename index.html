@@ -1,0 +1,29 @@
+<!--
+    GitHub : https://github.com/niirmaaltwaatii/GuessNum
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>GuessNumber</title>
+</head>
+<body>
+    <fieldset>
+        <legend>GuessNum</legend>
+        <div class="intro">
+
+        </div>
+        <input type="text" id="inp" placeholder="Enter Your Guess Here"><br>
+        <button type="submit" onclick="check()">Guess</button>
+        <button id="again" onclick="again()">Play Again</button>
+        <div id="previous">
+            <b>Previous Guesses : <span id="prev"></span> </b>
+        </div>
+        <div id="result"></div>
+    </fieldset>
+    <script src="script.js"></script>
+</body>
+</html>
