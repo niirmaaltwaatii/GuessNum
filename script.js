@@ -1,7 +1,7 @@
 /*
     GitHub : https://github.com/niirmaaltwaatii/GuessNum
 */
-var tries = 1;
+var tries = 0;
 var pre = [];
 var ran = Math.floor(Math.random()*100 + 1);
 function check() {
@@ -11,6 +11,7 @@ function check() {
     if(tries<10){
         if(inp==ran){
             tries++;
+            pre.push(inp);
             res.innerHTML = "Gotcha !!! You got it Right in "+tries+" tries !";
             res.style.background = "Green";
             res.style.color = "white";
