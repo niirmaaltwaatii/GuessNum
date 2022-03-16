@@ -4,15 +4,15 @@
 var tries = 0;
 var pre = [];
 var ran = Math.floor(Math.random()*100 + 1);
+
+var res = document.querySelector("#result");
+var prev = document.querySelector("#prev");
+
 function check() {
-    var inp = document.querySelector("#inp").value;
-    var res = document.querySelector("#result");
-    var prev = document.querySelector("#prev");
     if(tries<10){
+        var inp = document.querySelector("#inp").value;
+        update(inp);
         if(inp==ran){
-            tries++;
-            pre.push(inp);
-            prev.innerHTML = pre;
             res.innerHTML = "Gotcha !!! You got it Right in "+tries+" tries !";
             res.style.background = "Green";
             res.style.color = "white";
@@ -21,16 +21,10 @@ function check() {
             res.innerHTML = "Your Guess is too High !";
             res.style.background = "red";
             res.style.color = "black";
-            pre.push(inp);
-            prev.innerHTML = pre;
-            tries++;
         }else if(inp<ran){
             res.innerHTML = "Your Guess is too Low !";
             res.style.background = "red";
             res.style.color = "black";
-            pre.push(inp);
-            prev.innerHTML = pre;
-            tries++;
         }else{
             res.innerHTML = "Error Occured !";
         }
@@ -40,8 +34,15 @@ function check() {
     }
     document.querySelector("#inp").value = "";
 }
+
+function update(inp) {
+    pre.push(inp);
+    prev.innerHTML = pre;
+    tries++;
+}
+
+console.log(ran);
+
 function again(){
     window.location.reload();
 }
-console.log(ran);
-console.log(prev);
