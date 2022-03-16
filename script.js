@@ -12,6 +12,7 @@ function check() {
         if(inp==ran){
             tries++;
             pre.push(inp);
+            prev.innerHTML = pre;
             res.innerHTML = "Gotcha !!! You got it Right in "+tries+" tries !";
             res.style.background = "Green";
             res.style.color = "white";
